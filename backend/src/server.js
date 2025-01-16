@@ -16,6 +16,9 @@ app.use(express.json());
 // Routes
 app.use('/api/chat', chatRoutes);
 
+// Add after routes
+app.use(errorHandler);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
